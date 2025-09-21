@@ -89,38 +89,31 @@ elif terremoto >= 7:
     print("Extremo, puede causar daños graves a gran escala")
 print()
 #ejercicio_10
-mes=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-hemisferio=input("ingrese el hemisferio en el que se encuentra")
-mes=input("ingrese el mes que desea saber (Ej: Enero, Febrero, etc)")
-dia=input("ingrese el día que desea saber")
+meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 
-def hemisferio_norte(mes,dia):
-    if (mes == "Septiembre" and dia >=21) or (mes in ["Abril","Mayo"]) or (mes == "Junio" and dia <= 20):
-        return "Primavera"
-    
-    elif (mes=="Diciembre" and dia >=21) or (mes in ["Julio","Agosto"]) or (mes == "marzo"):
-        return "Verano"
-    
-    elif (mes == "Septiembre" and dia >=21) or (mes in ["Octubre", "Noviembre"]) or (mes == "Diciembre" and dia <=20):
-        return "Otoño"
-    else:
-        return "Invierno"
-    
-def hemisferio_sur (mes,dia):
-    if (mes == "Septiembre" and dia >=21) or (mes in ["Octubre","Noviembre"]) or (mes == 12 and dia <=20):
-        return "Primavera"
-    
-    elif (mes == "Diciembre" and dia >=21) or (mes in ["Enero","Febrero"]) or (mes == "Marzo" and dia <=20):
-        return "Verano"
-    
-    elif (mes == "Marzo" and dia >=21) or (mes in ["Abril","Mayo"]) or (mes=="Junio" and dia <=20):
-        return "Otoño"
-    else:
-        return "Invierno"
+hemisferio = input("Ingrese el hemisferio en el que se encuentra (Norte/Sur): ")
+mes = input("Ingrese el mes que desea saber (Ej: Enero, Febrero, etc): ")
+dia = int(input("Ingrese el día que desea saber: "))
 
 if hemisferio == "Norte":
-    estacion=hemisferio_norte(mes,dia)
-elif hemisferio == "Sur":
-    estacion=hemisferio_sur(mes,dia)
+    if (mes == "Septiembre" and dia >= 21) or (mes in ["Abril", "Mayo"]) or (mes == "Junio" and dia <= 20):
+        estacion = "Primavera"
+    elif (mes == "Diciembre" and dia >= 21) or (mes in ["Julio", "Agosto"]) or (mes == "Marzo"):
+        estacion = "Verano"
+    elif (mes == "Septiembre" and dia >= 21) or (mes in ["Octubre", "Noviembre"]) or (mes == "Diciembre" and dia <= 20):
+        estacion = "Otoño"
+    else:
+        estacion = "Invierno"
 
-print("Estas en la estación: ", estacion)
+elif hemisferio == "Sur":
+    if (mes == "Septiembre" and dia >= 21) or (mes in ["Octubre", "Noviembre"]) or (mes == "Diciembre" and dia <= 20):
+        estacion = "Primavera"
+    elif (mes == "Diciembre" and dia >= 21) or (mes in ["Enero", "Febrero"]) or (mes == "Marzo" and dia <= 20):
+        estacion = "Verano"
+    elif (mes == "Marzo" and dia >= 21) or (mes in ["Abril", "Mayo"]) or (mes == "Junio" and dia <= 20):
+        estacion = "Otoño"
+    else:
+        estacion = "Invierno"
+    
+print("Estás en la estación:", estacion)
