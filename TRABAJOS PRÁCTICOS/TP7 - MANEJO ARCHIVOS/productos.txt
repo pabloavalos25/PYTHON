@@ -1,0 +1,4 @@
+Arroz,1200,15
+Aceite,1500,10
+Fideos,980,25
+Mayonesa,45.0,20
